@@ -1,0 +1,41 @@
+Administrator
+qPm4LFRz&$pMwQW85mo**b2E$YZfanS4
+
+https://drive.google.com/drive/folders/18Z0tIDj_lUa4M51oMnljLh8CR2rj3C17?usp=sharing
+
+To
+
+host
+https://drive.google.com/drive/folders/1PIeqI0bMsuUNvHaCbNklxkyTILcMT_eJ?usp=sharing
+http://task-1-737192270.us-east-1.elb.amazonaws.com/
+
+
+#!/bin/bash
+
+
+CURRENT_BRANCH=$(git branch --show-current)
+
+
+echo "Current Branch is $CURRENT_BRANCH"
+
+
+git fetch origin 
+
+
+git rebase $CURRENT_BRANCH
+
+
+read -p "Enter the Other Branch" OTHER_BRANCH
+
+
+git checkout $OTHER_BRANCH
+
+touch file0 file9 file8 file7
+
+git add .
+ 
+git commit -m "the is the demo"
+
+git checkout $CURRENT_BRANCH
+
+git merge $OTHER_BRANCH
